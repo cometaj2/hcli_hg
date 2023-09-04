@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.1]
 - Update to latest version of openai and tiktoken libraries.
+- Fix cleanup of chat leftovers and context files before python package bundling.
 
 ## [0.1.0]
 - Moved out of hcli_core's sample hcli applications for independent development.
