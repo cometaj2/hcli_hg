@@ -1,5 +1,7 @@
-HCLI hg |pypi|_ |build status|_ |pyver|_
-========================================
+|pypi|_ |build status|_ |pyver|_
+
+HCLI hg
+=======
 
 HCLI hg is a python package wrapper that contains an HCLI sample application (hg); hg is an HCLI for interacting with GPT-3.5-Turbo via terminal input and output streams.
 
