@@ -1,5 +1,5 @@
 from __future__ import absolute_import, division, print_function
 
-__version__ = "0.1.2"
-dependencies = ["openai==0.28.0",
-                "tiktoken==0.4.0"]
+__version__ = "0.1.3"
+dependencies = ["openai==1.7.0",
+                "tiktoken==0.5.2"]

@@ -6,7 +6,8 @@ import inspect
 import traceback
 import tiktoken
 import logger
-import openai
+import instance
+from openai import OpenAI
 
 logging = logger.Logger()
 logging.setLevel(logger.INFO)
@@ -19,7 +20,6 @@ class CLI:
     context_tokens = 0
     total_tokens = 0
     max_context_length = 4097
-    model = "gpt-3.5-turbo"
     encoding_base = "p50k_base"
     context_file = None
     chat_file = None
@@ -138,16 +138,10 @@ class CLI:
 
             if self.total_tokens != 0:
                 try:
-                    openai.api_key = os.environ["OPENAI_API_KEY"]
-                    response = openai.ChatCompletion.create(
-                                                               model=self.model,
-                                                               messages=self.context,
-                                                               temperature=0.5,
-                                                               max_tokens=2048,
-                                                               n=1,
-                                                               stop=None,
-                                                               frequency_penalty=0.5,
-                                                               presence_penalty=0.5,
+                    client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+                    response = client.chat.completions.create(
+                                                               **instance.baseline,
+                                                               messages=self.context
                                                            )
                 except Exception as e:
                     return io.BytesIO(traceback.format_exc().encode("utf-8"))
@@ -156,10 +150,10 @@ class CLI:
                 return io.BytesIO(error.encode("utf-8"))
 
             # Output for context retention
-            output_response = response["choices"][0]["message"]
-            self.add(output_response)
+            output_response = response.choices[0].message
+            self.add({ "role" : output_response.role, "content" : output_response.content})
 
-            output = response["choices"][0]["message"]["content"]
+            output = response.choices[0].message.content
             output = output + "\n"
 
             # Ouput for human consumption and longstanding conversation tracking
