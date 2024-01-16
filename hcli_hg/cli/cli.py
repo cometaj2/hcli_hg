@@ -7,6 +7,7 @@ import traceback
 import tiktoken
 import logger
 import instance
+
 from openai import OpenAI
 
 logging = logger.Logger()

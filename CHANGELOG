@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is loosely based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.1.4]
+- Update to include a hg help command example to run a chat like experience in the bash terminal.
+
 ## [0.1.3]
 - Update to the latest version of the OpenAI library and API interface.
 - Update to the latest version of the tiktoken library.
