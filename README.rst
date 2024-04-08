@@ -1,4 +1,4 @@
-|pypi|_ |build status|_ |pyver|_
+|pypi| |build status| |pyver|
 
 HCLI hg
 =======
@@ -79,8 +79,8 @@ Bugs
 N/A
 
 .. |build status| image:: https://circleci.com/gh/cometaj2/hcli_hg.svg?style=shield
-.. _build status: https://circleci.com/gh/cometaj2/hcli_hg
+   :target: https://circleci.com/gh/cometaj2/hcli_hg
 .. |pypi| image:: https://img.shields.io/pypi/v/hcli-hg?label=hcli-hg
-.. _pypi: https://pypi.org/project/hcli-hg
+   :target: https://pypi.org/project/hcli-hg
 .. |pyver| image:: https://img.shields.io/pypi/pyversions/hcli-hg.svg
-.. _pyver: https://pypi.org/project/hcli-hg
+   :target: https://pypi.org/project/hcli-hg
